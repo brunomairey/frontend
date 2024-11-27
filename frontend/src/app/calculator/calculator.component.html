@@ -1,0 +1,104 @@
+<div class="container">
+  <h1 class="text-center">Immobilien-Investment Rechner Wien</h1>
+  <p class="text-center">
+    Berechnen Sie die Rentabilität Ihrer Immobilieninvestition in Wien
+  </p>
+
+  <div class="content">
+    <div class="form-container">
+      <form [formGroup]="calculatorForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Bruttojahresgehalt (€)</mat-label>
+          <input matInput formControlName="annualGrossIncome" type="number" />
+          <!-- <mat-hint>Monatliches Nettoeinkommen: {{ monthlyNetIncome | currency:'EUR' }}</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Laufende Kredite (monatliche Rate in €)</mat-label>
+          <input matInput formControlName="existingLoanPayment" type="number" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Anzahl Kinder</mat-label>
+          <input
+            matInput
+            formControlName="numberOfChildren"
+            type="number"
+            min="0"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Kaufpreis (€)</mat-label>
+          <input matInput formControlName="propertyPrice" type="number" />
+          <!-- <mat-hint>Maximaler Kaufpreis: {{ maxPropertyPrice | currency:'EUR' }}</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Eigenkapital (€)</mat-label>
+          <input matInput formControlName="downPayment" type="number" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Kreditzins (%)</mat-label>
+          <input
+            matInput
+            formControlName="interestRate"
+            type="number"
+            step="0.1"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Kreditlaufzeit (Jahre)</mat-label>
+          <input matInput formControlName="loanTerm" type="number" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mietrendite (%)</mat-label>
+          <input
+            matInput
+            formControlName="rentalYield"
+            type="number"
+            step="0.1"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Wertsteigerung p.a. (%)</mat-label>
+          <input
+            matInput
+            formControlName="propertyAppreciation"
+            type="number"
+            step="0.1"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mietsteigerung p.a. (%)</mat-label>
+          <input
+            matInput
+            formControlName="rentIncrease"
+            type="number"
+            step="0.1"
+          />
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div class="results-container">
+      <div class="result-item">
+        <span>Monatliche Rate:</span>
+        <span>{{ monthlyMortgage | currency: "EUR" }}</span>
+      </div>
+      <div class="result-item">
+        <span>Monatliche Miete:</span>
+        <span>{{ monthlyRent | currency: "EUR" }}</span>
+      </div>
+      <div class="result-item">
+        <span>Endvermögen:</span>
+        <span>{{ finalResult.netWorth | currency: "EUR" }}</span>
+      </div>
+    </div>
+  </div>
+</div>

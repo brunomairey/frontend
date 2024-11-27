@@ -1,0 +1,48 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+.form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  width: fit-content;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed #ccc;
+}
+
+.result-item {
+  margin-bottom: 20px;
+}
+
+.result-item span {
+  display: block;
+}
+
+mat-form-field {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 200px;
+  max-width: calc(33.333% - 20px);
+}
